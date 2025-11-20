@@ -2,7 +2,7 @@ import socket #bilbioteca utilizada para comunicação entre computadores
 import threading #biblioteca utilizada para executar multiplas tarefas ao mesmo tempo
 
 host = '192.168.1.105' #ip do servidor que o cliente vai se conectar
-porta = 9999 #porta do servidor que o cliente vai se conectar
+porta = 5000 #porta do servidor que o cliente vai se conectar
 
 metodoSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #cria um socket tcp
 metodoSocket.connect((host, porta)) #conecta o socket tcp no host e porta especificados
