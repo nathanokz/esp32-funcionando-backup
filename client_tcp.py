@@ -7,7 +7,7 @@ porta = 9999 #porta do servidor que o cliente vai se conectar
 metodoSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #cria um socket tcp
 metodoSocket.connect((host, porta)) #conecta o socket tcp no host e porta especificados
 
-nome = 'client_tcp'
+nome = 'client_tcp' #nome padrão do cliente
 
 def receber(): #serve para receber mensagens dos servidor
     while True: #cria um loop infinito
@@ -36,7 +36,7 @@ while True: #inicia o loop
         metodoSocket.send(f"{nome} saiu do servidor".encode()) #envia a mensagem para o servidor dizendo que o cliente saiu
         break #finaliza o loop saindo do servidor
 
-    elif mensagem == "/led_on" or mensagem == "/led_off" or mensagem == '/enviar_dados':
+    elif mensagem == "/led_on" or mensagem == "/led_off" or mensagem == '/enviar_dados': #verifica se não é alguma dessas mensagens para mandar para esp
         metodoSocket.sendall(mensagem.encode()) #envia a mensagem para o servidor
 
     else: #se não
