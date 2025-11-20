@@ -36,7 +36,7 @@ while True: #inicia o loop
         metodoSocket.send(f"{nome} saiu do servidor".encode()) #envia a mensagem para o servidor dizendo que o cliente saiu
         break #finaliza o loop saindo do servidor
 
-    elif mensagem == "/led_on" or mensagem == "/led_off" or mensagem == '/enviar_dados' or mensagem == 'q':
+    elif mensagem == "/led_on" or mensagem == "/led_off" or mensagem == '/enviar_dados':
         metodoSocket.sendall(mensagem.encode()) #envia a mensagem para o servidor
 
     else: #se não
