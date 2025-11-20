@@ -13,10 +13,8 @@ def cliente(conn, ender): #função para comunicação com o cliente
             data = conn.recv(1024) #recebe mensagens de ate 1024 bytes 
             if not data: #se não receber nada
                 break #finaliza o loop
-            
             mensagem = data.decode().strip() #decodifica a mensagem do cliente byte -> string
             print(f"mensagem recebida de {mensagem}") #exibe a mensagem decodificada
-
             #envia a mensagem para todos os clientes conectados
             for cliente in clientes: #para todo cliente que estiver na lista de clientes
                 try: #tenta executar o bloco
