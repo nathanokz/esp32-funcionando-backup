@@ -1,6 +1,6 @@
 import socket #bilbioteca utilizada para comunicação entre computadores
 
-host = '192.168.1.109' #ip do servidor
+host = '192.168.1.105' #ip do servidor
 porta = 5000 #porta do servidor 
 
 clientes = {} #cria um dicionario de clientes
@@ -11,7 +11,7 @@ server.bind((host, porta)) #conecta o socket udp no host e porta especificados
 print('aguardando mensagem...') #printa enquanto espera uma mensagem
 
 while True: #inicia o loop
-    data, ender = server.recvfrom(1024) #recebe mensagens de ate 1024 bytes 
+    data, ender = server.recvfrom(20000) #recebe mensagens de ate 1024 bytes 
     mensagem = data.decode().strip() #decodifica a mensagem recebida bytes -> string
 
     if ender not in clientes: #verifica se o endereço do cliente ai não esta no dicionario
