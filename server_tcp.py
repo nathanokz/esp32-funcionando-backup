@@ -10,7 +10,7 @@ def cliente(conn, ender): #função para comunicação com o cliente
     print(f"cliente conectado: {ender}") #mostra o cliente que se conectou
     while True: #inicia o loop
         try: #tenta realizar o bloco
-            data = conn.recv(1024) #recebe mensagens de ate 1024 bytes 
+            data = conn.recv(20000) #recebe mensagens de ate 1024 bytes 
             if not data: #se não receber nada
                 break #finaliza o loop
             mensagem = data.decode().strip() #decodifica a mensagem do cliente byte -> string
