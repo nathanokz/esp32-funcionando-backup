@@ -98,4 +98,3 @@ while True:
     oled.text('"hum": 60}}',0,50)
     oled.show()
     time.sleep(1)  
-
