@@ -1,6 +1,6 @@
 import socket #bilbioteca utilizada para comunicação entre computadores
 import threading #biblioteca utilizada para executar multiplas tarefas ao mesmo tempo
-import time
+import time #importa biblioteca de funções relacionadas a tempo
 
 host = '192.168.1.105' #ip do servidor que o cliente vai se conectar
 porta = 5000 #porta do servidor que o cliente vai se conectar
