@@ -11,7 +11,7 @@ server.bind((host, porta)) #conecta o socket udp no host e porta especificados
 print('aguardando mensagem...') #printa enquanto espera uma mensagem
 
 while True: #inicia o loop
-    data, ender = server.recvfrom(20000) #recebe mensagens de ate 1024 bytes 
+    data, ender = server.recvfrom(20000) #recebe mensagens de ate 20000 bytes 
     mensagem = data.decode().strip() #decodifica a mensagem recebida bytes -> string
 
     if ender not in clientes: #verifica se o endereço do cliente ai não esta no dicionario
