@@ -17,10 +17,11 @@ def cliente(conn, ender): #função para comunicação com o cliente
             print(f"mensagem recebida de {mensagem}") #exibe a mensagem decodificada
             #envia a mensagem para todos os clientes conectados
             for cliente in clientes: #para todo cliente que estiver na lista de clientes
-                try: #tenta executar o bloco
-                    cliente.sendall(data) #envia a mensagem para todos os clientes
-                except: #se não conseguir realizar o bloco cai aqui
-                    pass #continua o código
+                if cliente is not conn: #se o cliente não é o mesmo que enviou
+                    try: #tenta executar o bloco
+                        cliente.sendall(data) #envia a mensagem para todos os clientes
+                    except: #se não conseguir realizar o bloco cai aqui
+                        pass #continua o código
 
         except: #se não conseguir realizar o bloco acima cai aqui
             break #finaliza o codigo
