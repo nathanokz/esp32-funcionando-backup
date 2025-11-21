@@ -12,7 +12,10 @@ print('aguardando mensagem...') #printa enquanto espera uma mensagem
 
 while True: #inicia o loop
     data, ender = server.recvfrom(20000) #recebe mensagens de ate 20000 bytes 
-    mensagem = data.decode().strip() #decodifica a mensagem recebida bytes -> string
+    try: #tenta executar o bloco
+        mensagem = data.decode().strip() #decodifica a mensagem recebida bytes -> string
+    except: #se não conseguir executar o bloco
+        continue #ignora os pacotes que não são texto
 
     if ender not in clientes: #verifica se o endereço do cliente ai não esta no dicionario
         clientes[ender] = mensagem #adiciona o cliente ao dicionario
