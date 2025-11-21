@@ -13,7 +13,7 @@ nome = 'client_tcp' #nome padrão do cliente
 def receber(): #serve para receber mensagens dos servidor
     while True: #cria um loop infinito
         try: #tenta realizar o bloco
-            data = metodoSocket.recv(1024) #recebe mensagens de ate 1024 bytes 
+            data = metodoSocket.recv(20000) #recebe mensagens de ate 1024 bytes 
             if not data: #se não receber nada
                 print("servidor desconectado") #desconecta do servidor
                 break #finaliza o loop
