@@ -13,7 +13,7 @@ metodoSocket.sendto(nome.encode(), (host, porta)) #conecta o socket tcp no host 
 def receber(): #serve para receber mensagens dos servidor
     while True: #cria um loop infinito
         try: #tenta realizar o bloco
-            data, ender = metodoSocket.recvfrom(1024) #recebe mensagens de ate 1024 bytes
+            data, ender = metodoSocket.recvfrom(20000) #recebe mensagens de ate 1024 bytes
             print(data.decode()) #printa a mensagem recebida já decodificada byte -> string 
         
         except: #se não conseguir realizar o bloco cai aqui
